@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, ID, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CreatePetInput } from './dto/create-project.dto';
 import { Pet } from './pets.entity';
 import { PetsService } from './pets.service';
@@ -10,6 +10,11 @@ export class PetsResolver {
     @Query(returns => [Pet])
     pets() {
         return this.petservice.findall()
+    }
+
+    @Query(returns => Pet)
+    pet(@Args('id', { type: () => ID }) id: number) {
+        return this.petservice.findone(id)
     }
 
     @Mutation(() => Pet)
