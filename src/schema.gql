@@ -10,6 +10,7 @@ type Pet {
 
 type Query {
   pets: [Pet!]!
+  pet(id: ID!): Pet!
 }
 
 type Mutation {

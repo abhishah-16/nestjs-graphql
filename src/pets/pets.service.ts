@@ -13,6 +13,11 @@ export class PetsService {
     }
 
     findall() {
-        return []
+        return this.petrepo.find()
+    }
+
+    findone(id: number) {
+        const pet = this.petrepo.findOne({ where: { id } })
+        return pet
     }
 }
