@@ -32,6 +32,7 @@ type Mutation {
 input CreatePetInput {
   name: String!
   type: String
+  ownerId: Float!
 }
 
 input CreateOwnerInput {

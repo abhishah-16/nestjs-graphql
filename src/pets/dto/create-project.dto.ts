@@ -7,4 +7,7 @@ export class CreatePetInput {
 
     @Field({ nullable: true })
     type?: string
+
+    @Field()
+    ownerId: number 
 }

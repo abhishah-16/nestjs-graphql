@@ -16,7 +16,9 @@ export class OwnersService {
   }
 
   findAll() {
-    const owners = this.ownerRepo.find()
+    const owners = this.ownerRepo.find({
+      relations: ['pets']
+    })
     return owners
   }
 
