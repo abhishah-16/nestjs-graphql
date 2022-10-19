@@ -1,4 +1,4 @@
-import { Args, ID, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, ID, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CreatePetInput } from './dto/create-project.dto';
 import { Pet } from './pets.entity';
 import { PetsService } from './pets.service';
@@ -18,7 +18,7 @@ export class PetsResolver {
     }
 
     @Mutation(() => Pet)
-    createProject(@Args('createProjectInput') createPetInput: CreatePetInput) {
+    addPet(@Args('createProjectInput') createPetInput: CreatePetInput) {
         return this.petservice.createPet(createPetInput)
     }
 }
