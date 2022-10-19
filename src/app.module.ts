@@ -8,6 +8,7 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Pet } from './pets/pets.entity';
+import { OwnersModule } from './owners/owners.module';
 
 @Module({
   imports: [
@@ -27,7 +28,8 @@ import { Pet } from './pets/pets.entity';
       synchronize: true,
       entities: [Pet]
     }),
-    PetsModule],
+    PetsModule,
+    OwnersModule],
   controllers: [AppController],
   providers: [AppService],
 })
