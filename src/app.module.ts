@@ -9,6 +9,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Pet } from './pets/pets.entity';
 import { OwnersModule } from './owners/owners.module';
+import { Owner } from './owners/entities/owner.entity';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { OwnersModule } from './owners/owners.module';
       password: 'root',
       database: 'nest_typeorm',
       synchronize: true,
-      entities: [Pet]
+      entities: [Pet, Owner]
     }),
     PetsModule,
     OwnersModule],
