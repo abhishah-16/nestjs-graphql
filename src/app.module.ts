@@ -27,7 +27,10 @@ import { Owner } from './owners/entities/owner.entity';
       password: 'root',
       database: 'nest_typeorm',
       synchronize: true,
-      entities: [Pet, Owner]
+      entities: [Pet, Owner],
+      migrationsTableName: 'Migration_table',
+      migrations: ['./migration/*.{ts,js}'],
+      migrationsRun: true
     }),
     PetsModule,
     OwnersModule],
